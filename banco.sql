@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema banco_ppt
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema banco_ppt
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `banco_ppt` DEFAULT CHARACTER SET utf8 ;
+USE `banco_ppt` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`cliente`
+-- Table `banco_ppt`.`cliente`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`cliente` (
+CREATE TABLE IF NOT EXISTS `banco_ppt`.`cliente` (
   `idcliente` INT NOT NULL,
   `nome` VARCHAR(50) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`produto`
+-- Table `banco_ppt`.`produto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`produto` (
+CREATE TABLE IF NOT EXISTS `banco_ppt`.`produto` (
   `idproduto` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `preco` DECIMAL(8,2) NOT NULL,
@@ -41,9 +41,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`pedido`
+-- Table `banco_ppt`.`pedido`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`pedido` (
+CREATE TABLE IF NOT EXISTS `banco_ppt`.`pedido` (
   `idpedido` INT NOT NULL,
   `idproduto` INT NOT NULL,
   `idcliente` INT NOT NULL,
@@ -54,12 +54,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pedido` (
   INDEX `fk_cliente_has_produto_cliente_idx` (`idcliente` ASC) VISIBLE,
   CONSTRAINT `fk_cliente_has_produto_cliente`
     FOREIGN KEY (`idcliente`)
-    REFERENCES `mydb`.`cliente` (`idcliente`)
+    REFERENCES `banco_ppt`.`cliente` (`idcliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_cliente_has_produto_produto1`
     FOREIGN KEY (`idproduto`)
-    REFERENCES `mydb`.`produto` (`idproduto`)
+    REFERENCES `banco_ppt`.`produto` (`idproduto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
