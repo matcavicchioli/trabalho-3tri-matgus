@@ -65,6 +65,52 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pedido` (
 ENGINE = InnoDB;
 
 
+
+
+-- -----------------------------------------------------
+-- INSERTS: 10 registros para cada tabela
+-- -----------------------------------------------------
+
+-- Dados da tabela cliente
+INSERT INTO `cliente` (`idcliente`, `nome`, `email`, `cidade`) VALUES
+(1, 'Ana Souza', 'ana.souza@email.com', 'Ceres'),
+(2, 'Bruno Lima', 'bruno.lima@email.com', 'Mara Rosa'),
+(3, 'Carla Mendes', 'carla.mendes@email.com', 'Goiania'),
+(4, 'Daniel Alves', 'daniel.alves@email.com', 'Anapolis'),
+(5, 'Eduarda Costa', 'eduarda.costa@email.com', 'Rialma'),
+(6, 'Felipe Santos', 'felipe.santos@email.com', 'Uruana'),
+(7, 'Gabriela Rocha', 'gabriela.rocha@email.com', 'Itapaci'),
+(8, 'Henrique Oliveira', 'henrique.oliveira@email.com', 'Rubiataba'),
+(9, 'Isabela Ferreira', 'isabela.ferreira@email.com', 'Jaragua'),
+(10, 'Joao Pedro', 'joao.pedro@email.com', 'Carmo do Rio Verde');
+
+-- Dados da tabela produto (somente portas, porcas e tortas)
+INSERT INTO `produto` (`idproduto`, `nome`, `preco`) VALUES
+(1, 'Porta de carvalho', 250.00),
+(2, 'Porca sextavada de aço', 0.50),
+(3, 'Torta de limão', 45.00),
+(4, 'Porta de mogno', 320.00),
+(5, 'Porca borboleta', 0.75),
+(6, 'Torta de chocolate', 55.00),
+(7, 'Porta de pinus', 280.00),
+(8, 'Porca autotravante', 0.60),
+(9, 'Torta de morango', 40.00),
+(10, 'Porta de madeira maciça', 350.00);
+
+-- Dados da tabela pedido
+INSERT INTO `pedido` (`idpedido`, `idproduto`, `idcliente`, `quantidade`, `data_pedido`) VALUES
+(1, 1, 1, 1, '2026-11-01 09:15:00'),
+(2, 2, 2, 20, '2026-11-02 10:30:00'),
+(3, 3, 3, 2, '2026-11-03 11:45:00'),
+(4, 4, 4, 1, '2026-11-04 13:00:00'),
+(5, 5, 5, 50, '2026-11-05 14:20:00'),
+(6, 6, 6, 1, '2026-11-06 15:35:00'),
+(7, 7, 7, 2, '2026-11-07 08:50:00'),
+(8, 8, 8, 30, '2026-11-08 16:10:00'),
+(9, 9, 9, 3, '2026-11-09 17:25:00'),
+(10, 10, 10, 1, '2026-11-10 18:40:00');
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
